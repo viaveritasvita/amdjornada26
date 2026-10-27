@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ágape — Jornada dos Graus Maçônicos Aliados · AMD 2026</title>
+  <meta name="description" content="Alimentação da Jornada dos Graus Maçônicos Aliados (AMD), 30 e 31 de outubro de 2026, ou dos três eventos AMD, OSM e RCC. Pagamento por Pix.">
+  <meta name="theme-color" content="#101f3c">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/app-icon-192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navegacao.css">
+  <link rel="stylesheet" href="refeicoes.css">
+
+  <!-- Open Graph / preview ao compartilhar (WhatsApp, redes) -->
+  <meta property="og:title" content="Jornada dos Graus Maçônicos Aliados — AMD">
+  <meta property="og:description" content="30 e 31 de outubro de 2026 · Garanta aqui o seu ágape · pagamento por Pix">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://viaveritasvita.github.io/amdjornada26/">
+  <meta property="og:image" content="https://viaveritasvita.github.io/amdjornada26/assets/og-cover.jpg?v=1">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://viaveritasvita.github.io/amdjornada26/assets/og-cover.jpg?v=1">
+</head>
+<body class="pg-refeicoes">
+
+  <nav class="site-nav" aria-label="Páginas do evento">
+    <a href="./" aria-current="page">Ágape</a>
+    <a href="programacao.html">Programação</a>
+  </nav>
+
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="medallion-wrap">
+        <img class="medallion" src="assets/medalhao.png" width="200" height="200" alt="Medalhão AMD · RCC · OSM">
+      </div>
+      <div class="masthead-titles">
+        <div class="masthead-sigla"><span>AMD</span></div>
+        <h1>Ágape da <span class="title-accent">Jornada</span></h1>
+        <div class="date-plaque-row">
+          <div class="date-plaque">30 e 31 de outubro de 2026</div>
+        </div>
+        <p class="masthead-place">Graus Maçônicos Aliados</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="hairline" aria-hidden="true">
+
+  <!-- aparece só enquanto o Pix não estiver completo em refeicoes-config.js -->
+  <div class="rf-demo" id="rfDemo" hidden>
+    <strong>Versão de avaliação.</strong> O Pix ainda será configurado: não faça pagamentos por esta página.
+  </div>
+
+  <main id="app">
+    <p class="rf-lead">
+      Escolha a sua opção de alimentação. O valor sai na hora e o pagamento é por <strong>Pix</strong>.
+      <br><strong>Pagamento até 28/10.</strong>
+    </p>
+
+    <!-- pedido já feito neste aparelho -->
+    <div id="rfSaved"></div>
+
+    <!-- página fechada (prazo encerrado) -->
+    <div id="rfClosed" class="rf-card rf-closed" hidden>
+      <h2>Pedidos encerrados</h2>
+      <p>O prazo para garantir a alimentação terminou. Em caso de dúvida, procure a organização.</p>
+    </div>
+
+    <!-- ============ FORMULÁRIO ============ -->
+    <form id="rfForm" novalidate>
+
+      <!-- 1. dados -->
+      <section class="rf-step">
+        <header class="rf-step-head"><span class="rf-step-num">1</span><h2>Seus dados</h2></header>
+        <div class="rf-card">
+          <label class="rf-field">
+            <span>Nome completo do irmão</span>
+            <input type="text" id="fNome" name="nome" autocomplete="name" required placeholder="Ex.: João da Silva">
+          </label>
+          <label class="rf-field">
+            <span>WhatsApp</span>
+            <input type="tel" id="fWhats" name="whatsapp" autocomplete="tel" inputmode="tel" required placeholder="(21) 99999-9999">
+          </label>
+          <label class="rf-field">
+            <span>Loja ou Conselho <em>(opcional)</em></span>
+            <input type="text" id="fLoja" name="loja" placeholder="Nome e número">
+          </label>
+        </div>
+      </section>
+
+      <!-- 2. opção -->
+      <section class="rf-step">
+        <header class="rf-step-head"><span class="rf-step-num">2</span><h2>Sua opção</h2></header>
+        <div class="rf-options" id="fOpcoes" role="radiogroup" aria-label="Opção de alimentação"></div>
+      </section>
+
+      <!-- 3. resumo -->
+      <section class="rf-step">
+        <header class="rf-step-head"><span class="rf-step-num">3</span><h2>Resumo</h2></header>
+        <div class="rf-card rf-summary" id="rfResumo"></div>
+
+        <!-- quem faz o Pix: opcional, ajuda a achar o pagamento no extrato -->
+        <div class="rf-card rf-payer">
+          <p class="rf-payer-title">De qual conta vai sair o Pix? <em>(opcional)</em></p>
+          <p class="rf-muted rf-small">O extrato mostra o nome do titular da conta. Isso ajuda a achar o seu pagamento.</p>
+          <div class="rf-payer-opts" role="radiogroup" aria-label="Titular da conta">
+            <label class="rf-me is-on"><input type="radio" name="pagador" value="eu" checked><span class="rf-check rf-radio" aria-hidden="true"></span><span>Conta no meu nome</span></label>
+            <label class="rf-me"><input type="radio" name="pagador" value="outro"><span class="rf-check rf-radio" aria-hidden="true"></span><span>Conta de outra pessoa</span></label>
+          </div>
+          <label class="rf-field" id="fPagadorBox" hidden>
+            <span>Nome do titular da conta</span>
+            <input type="text" id="fPagador" autocomplete="off" placeholder="Ex.: Maria da Silva (esposa) ou nome da empresa">
+          </label>
+          <label class="rf-field">
+            <span>Banco <em>(opcional)</em></span>
+            <input type="text" id="fBanco" list="bancos" autocomplete="off" placeholder="Ex.: Itaú, Nubank, Banco do Brasil">
+          </label>
+          <datalist id="bancos">
+            <option value="Banco do Brasil"><option value="Bradesco"><option value="Itaú"><option value="Santander">
+            <option value="Caixa"><option value="Nubank"><option value="Inter"><option value="C6 Bank">
+            <option value="Sicoob"><option value="Sicredi"><option value="BTG Pactual"><option value="PicPay">
+            <option value="Mercado Pago"><option value="PagBank"><option value="99Pay"><option value="Banrisul">
+          </datalist>
+        </div>
+
+        <p class="rf-muted rf-small rf-cents-note">Ao gerar o Pix, somamos alguns centavos (no máximo R$ 0,99) só para reconhecer o seu pagamento no extrato.</p>
+        <p class="rf-error" id="rfErro" role="alert" hidden></p>
+        <button type="submit" class="rf-btn rf-btn-primary rf-btn-block" id="btnGerar">Gerar Pix</button>
+      </section>
+    </form>
+
+    <!-- ============ PAGAMENTO ============ -->
+    <section id="rfPagamento" hidden>
+      <div class="rf-card rf-pay">
+        <p class="rf-pay-label">Pedido</p>
+        <p class="rf-pay-code" id="payCodigo"></p>
+        <p class="rf-pay-total" id="payTotal"></p>
+        <p class="rf-pay-cents" id="payCentavos" hidden></p>
+        <p class="rf-pay-who" id="payQuem"></p>
+
+        <div class="rf-qr" id="payQr" aria-label="QR Code Pix"></div>
+        <p class="rf-muted rf-center">Abra o app do seu banco → <strong>Pix</strong> → <strong>Ler QR Code</strong>.<br>O valor já vem preenchido.</p>
+
+        <button type="button" class="rf-btn rf-btn-gold rf-btn-block" id="btnCopiaCola">Copiar Pix copia e cola</button>
+
+        <div class="rf-paydata">
+          <h3>Ou transfira pela chave Pix</h3>
+          <dl>
+            <dt>Chave</dt><dd><span id="payChave"></span> <button type="button" class="rf-copy" id="btnCopiaChave">copiar</button></dd>
+            <dt>Favorecido</dt><dd id="payFavorecido"></dd>
+            <dt id="payBancoLbl">Banco</dt><dd id="payBanco"></dd>
+            <dt>Valor</dt><dd id="payValor"></dd>
+            <dt>Mensagem</dt><dd>Escreva o código <strong id="payCodigo2"></strong></dd>
+          </dl>
+        </div>
+
+        <div class="rf-pay-actions">
+          <label class="rf-upload" hidden>
+            <input type="file" accept="image/*,application/pdf">
+            <span class="rf-btn rf-btn-gold rf-btn-block">Enviar o comprovante</span>
+            <span class="rf-upload-msg rf-muted rf-small"></span>
+          </label>
+          <button type="button" class="rf-btn rf-btn-primary rf-btn-block" id="btnPaguei">Já fiz o Pix</button>
+          <a class="rf-btn rf-btn-whats rf-btn-block" data-whats="comprovante" href="#" target="_blank" rel="noopener" hidden>Mandar o comprovante no WhatsApp</a>
+          <button type="button" class="rf-btn rf-btn-ghost rf-btn-block" id="btnAlterar">Alterar o pedido</button>
+        </div>
+        <p class="rf-muted rf-center rf-small">Guarde o comprovante. Os pagamentos são conferidos no extrato pelo valor e pelo código do pedido.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONCLUÍDO ============ -->
+    <section id="rfFeito" hidden>
+      <div class="rf-card rf-done">
+        <div class="rf-done-mark" aria-hidden="true">✓</div>
+        <h2>Pagamento informado</h2>
+        <p>Obrigado, <strong id="doneNome"></strong>. Seu pedido <strong id="doneCodigo"></strong> foi registrado e será confirmado assim que o Pix aparecer no extrato.</p>
+        <p class="rf-done-total" id="doneTotal"></p>
+        <div class="rf-pay-actions">
+          <label class="rf-upload" hidden>
+            <input type="file" accept="image/*,application/pdf">
+            <span class="rf-btn rf-btn-gold rf-btn-block">Enviar o comprovante</span>
+            <span class="rf-upload-msg rf-muted rf-small"></span>
+          </label>
+          <a class="rf-btn rf-btn-whats rf-btn-block" data-whats="comprovante" href="#" target="_blank" rel="noopener" hidden>Mandar o comprovante no WhatsApp</a>
+          <a class="rf-btn rf-btn-primary rf-btn-block" href="programacao.html">Ver a programação</a>
+          <button type="button" class="rf-btn rf-btn-ghost rf-btn-block" id="btnNovo">Fazer pedido para outro irmão</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="rf-help" data-whats-box hidden>
+      Dúvida? <a data-whats="duvida" href="#" target="_blank" rel="noopener">Fale com a organização no WhatsApp</a>
+    </p>
+
+    <a class="rf-back" href="programacao.html">← Ver a programação da Jornada</a>
+  </main>
+
+  <!-- barra fixa com o total -->
+  <div class="rf-bar" id="rfBar">
+    <div class="rf-bar-inner">
+      <div class="rf-bar-total">
+        <span class="rf-bar-label">Total</span>
+        <span class="rf-bar-value" id="barTotal">R$ 0,00</span>
+      </div>
+      <button type="button" class="rf-btn rf-btn-primary" id="barGerar">Gerar Pix</button>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-motto">
+      <span>Jornada dos Graus Maçônicos Aliados</span>
+      <span>30 e 31 de outubro de 2026</span>
+    </p>
+    <p class="footer-note" id="rfFootNote">Pedidos registrados para conferência da organização</p>
+    <p class="brand-signature">
+      <a href="#" rel="noopener"><span class="brand-name">ViaVeritasVita</span><span class="brand-dot" aria-hidden="true">·</span><span>conheça nossa estrutura de apoio à Maçonaria</span></a>
+    </p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="text-align:center;padding:1rem;color:#101f3c">Esta página precisa de JavaScript.</p>
+  </noscript>
+
+  <script src="refeicoes-config.js"></script>
+  <script src="assets/qrcode.min.js"></script>
+  <script src="refeicoes.js"></script>
+</body>
+</html>
