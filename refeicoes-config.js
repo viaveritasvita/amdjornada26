@@ -35,6 +35,34 @@ const REFEICOES_CONFIG = {
     { id: 'tres', nome: 'Três eventos: AMD + OSM + RCC', detalhe: '30 e 31/10, 21/11 e 12/12/2026', valor: 360 },
   ],
 
+  /* Cardápio (só exibição). Cada bloco: título, quando e os pratos;
+     "sobremesas" e "bebidas" são opcionais. */
+  cardapio: [
+    {
+      titulo: 'Jantar', quando: 'Sexta-feira, 30/10',
+      pratos: ['Lagarto ao molho madeira', 'Arroz branco', 'Batata palha', 'Farofa de uvas-passas e castanhas', 'Salada verde', 'Maionese'],
+      sobremesas: ['Pudim de leite condensado', 'Cheesecake de uvas verdes'],
+      bebidas: 'Refrigerantes normais e zero (Coca-Cola, Fanta e Guaraná Antarctica)',
+    },
+    {
+      titulo: 'Café da manhã', quando: 'Sábado, 31/10',
+      pratos: ['Salada de frutas', 'Café preto com e sem açúcar', 'Leite', 'Chá-mate', 'Suco natural de laranja', 'Dois tipos de bolo', 'Sanduíche de queijo e presunto no pão baguete', 'Bolos de queijo e de arroz'],
+    },
+    {
+      titulo: 'Almoço', quando: 'Sábado, 31/10',
+      pratos: ['Lasanha de costela', 'Nhoque ao sugo', 'Arroz branco', 'Salada verde com legumes cozidos'],
+      sobremesas: ['Pavê de doce de leite', 'Mousse de maracujá'],
+      bebidas: 'Refrigerantes normais e zero',
+    },
+    {
+      titulo: 'Jantar', quando: 'Sábado, 31/10',
+      pratos: ['Frango xadrez', 'Arroz branco', 'Batata palha', 'Salada verde e legumes cozidos'],
+      sobremesas: ['Pudim de leite condensado', 'Gelatina colorida'],
+      bebidas: 'Refrigerantes normais e zero',
+    },
+  ],
+  cardapioNota: 'Bebidas não alcoólicas incluídas em todas as refeições.',
+
   /* Prazo de pagamento informado aos irmãos: até 28/10.
      Depois disso a página mostra "pedidos encerrados". */
   encerraEm: '2026-10-28T23:59:00-03:00',

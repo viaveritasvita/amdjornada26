@@ -147,6 +147,22 @@
     }));
   }
 
+  function renderCardapio() {
+    const box = $('#rfCardapio');
+    if (!box) return;
+    const lista = C.cardapio || [];
+    box.hidden = !lista.length;
+    const itens = (arr) => `<ul>${arr.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+    $('#rfCardapioLista').innerHTML = lista.map((r) => `
+      <section class="rf-prato">
+        <h3>${esc(r.titulo)} <span>${esc(r.quando)}</span></h3>
+        ${itens(r.pratos)}
+        ${r.sobremesas ? `<p class="rf-prato-sub">Sobremesas</p>${itens(r.sobremesas)}` : ''}
+        ${r.bebidas ? `<p class="rf-muted rf-small">${esc(r.bebidas)}</p>` : ''}
+      </section>`).join('')
+      + (C.cardapioNota ? `<p class="rf-muted rf-small rf-cardapio-nota">${esc(C.cardapioNota)}</p>` : '');
+  }
+
   function renderResumo() {
     const o = opcaoPor(state.opcao);
     const nome = $('#fNome').value.trim() || 'Você';
@@ -477,6 +493,7 @@
      ============================================================ */
   function init() {
     renderOpcoes();
+    renderCardapio();
     renderResumo();
     mascaraWhats($('#fWhats'));
 
