@@ -20,7 +20,7 @@ try {
   /* sem rede na instalação: apenas offline, sem push */
 }
 
-const CACHE = 'amdjornada26-v3';
+const CACHE = 'amdjornada26-v4';
 
 const APP_SHELL = [
   './',
@@ -39,11 +39,11 @@ const APP_SHELL = [
   './avisos.json',
   /* agenda completa estática (assinatura Google Agenda) — regerar se a grade mudar */
   './assets/agenda-amdjornada26.ics',
-  './assets/app-icon-192.png',
-  './assets/app-icon-512.png',
-  './assets/app-icon-maskable-512.png',
-  './assets/apple-touch-icon.png',
-  './assets/favicon-48.png',
+  './assets/icone-amd-192.png',
+  './assets/icone-amd-512.png',
+  './assets/icone-amd-maskable-512.png',
+  './assets/icone-amd-apple.png',
+  './assets/icone-amd-48.png',
   './assets/logo-amd.png',
   /* brasão oficial (PNG) + fallback SVG */
   /* artes de fundo (nenhuma neste projeto) */
