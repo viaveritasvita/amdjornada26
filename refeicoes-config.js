@@ -16,17 +16,17 @@ const REFEICOES_CONFIG = {
      cidade: só vai dentro do código Pix (não aparece na página). */
   pix: {
     chave: 'f5f765c7-b4d4-45db-893b-1e6382298539', // chave aleatória
-    nome: 'COLE_AQUI_O_NOME_DO_TITULAR',
+    nome: 'LUCIANO DE OLIVEIRA NUNES',
     cidade: 'RIO DE JANEIRO',
-    banco: '',
-    titular: '',   // como aparece na página (ex.: 'Ir. Fulano de Tal · Tesoureiro')
+    banco: 'Nubank',
+    titular: 'Ir. Luciano de Oliveira Nunes',
   },
 
   /* WhatsApp de quem recebe os comprovantes (55 + DDD + número, só dígitos).
      Vazio = os botões de WhatsApp somem. */
   tesoureiro: {
-    nome: 'Irmão',
-    whatsapp: '',
+    nome: 'Ir. Luciano',
+    whatsapp: '556599819296',
   },
 
   /* Opções de alimentação (uma por pedido). */

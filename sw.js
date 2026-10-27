@@ -20,7 +20,7 @@ try {
   /* sem rede na instalação: apenas offline, sem push */
 }
 
-const CACHE = 'amdjornada26-v1';
+const CACHE = 'amdjornada26-v2';
 
 const APP_SHELL = [
   './',
@@ -44,7 +44,7 @@ const APP_SHELL = [
   './assets/app-icon-maskable-512.png',
   './assets/apple-touch-icon.png',
   './assets/favicon-48.png',
-  './assets/medalhao.png',
+  './assets/logo-amd.png',
   /* brasão oficial (PNG) + fallback SVG */
   /* artes de fundo (nenhuma neste projeto) */
   'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap',

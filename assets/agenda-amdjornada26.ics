@@ -7,7 +7,7 @@ X-WR-CALNAME:Jornada dos Graus Maçônicos Aliados — AMD 2026
 X-WR-TIMEZONE:America/Sao_Paulo
 BEGIN:VEVENT
 UID:s30-1@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261030T231000Z
 DTEND:20261030T235000Z
 SUMMARY:São Lourenço\, o Mártir
@@ -16,7 +16,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s30-2@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T000000Z
 DTEND:20261031T004500Z
 SUMMARY:Cavaleiro de Constantinopla
@@ -25,7 +25,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-1@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T110000Z
 DTEND:20261031T115000Z
 SUMMARY:Arquiteto
@@ -34,7 +34,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-2@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T120000Z
 DTEND:20261031T125000Z
 SUMMARY:Grande Arquiteto
@@ -43,7 +43,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-3@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T130500Z
 DTEND:20261031T135500Z
 SUMMARY:Superintendente
@@ -52,7 +52,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-4@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T141000Z
 DTEND:20261031T152000Z
 SUMMARY:Mestres de Tiro
@@ -61,7 +61,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-5@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T163000Z
 DTEND:20261031T175000Z
 SUMMARY:Cruz Vermelha da Babilônia
@@ -70,7 +70,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-6@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T180500Z
 DTEND:20261031T185500Z
 SUMMARY:Grandes Cobridores de Salomão
@@ -79,7 +79,7 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-7@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T191000Z
 DTEND:20261031T201500Z
 SUMMARY:Santa Ordem Sacerdotal de Grande Sumo Sacerdote
@@ -88,14 +88,15 @@ URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 BEGIN:VEVENT
 UID:s31-8@amdjornada26
-DTSTAMP:20261027T151600Z
+DTSTAMP:20261027T153900Z
 DTSTART:20261031T203500Z
 DTEND:20261031T223500Z
 SUMMARY:Instalação dos 10 Soberanos Mestres
 DESCRIPTION:Ao todo\, 9 graus e 1 cerimônia de instalação.\nNão estão inc
- luídos nesta Jornada:\n• Antiga Ordem das Rolhas\n• Antigo Monitor de Jo
- nas\n• Ordem de São Patrício\n• Ordem Real do Ramo Vermelho d'Eri\nhttps
- ://viaveritasvita.github.io/amdjornada26/
+ luídos nesta Jornada\, pois são ordens e graus anexos conferidos somente
+  na Anual:\n• Antiga Ordem das Rolhas\n• Antigo Monitor de Jonas\n• Orde
+ m de São Patrício\n• Ordem Real do Ramo Vermelho d'Eri\nhttps://viaverit
+ asvita.github.io/amdjornada26/
 URL:https://viaveritasvita.github.io/amdjornada26/
 END:VEVENT
 END:VCALENDAR

@@ -36,10 +36,10 @@ const LOCATIONS = {};
 /* ---------- CORPOS / GRAUS ----------
    "geral" (sem selo) e "log" (logística) são reservados pelo motor. */
 const BODIES = {
-  amd:        { label: 'Graus Maçônicos Aliados', color: '#8a6828' },
-  instalacao: { label: 'Cerimônia complementar', color: '#16294e' },
-  geral:      { label: '', color: '#566072' },
-  log:        { label: '', color: '#64748b' },
+  amd:        { label: 'Graus Maçônicos Aliados', color: '#1b4d3e' },
+  instalacao: { label: 'Cerimônia complementar', color: '#8a6828' },
+  geral:      { label: '', color: '#55695f' },
+  log:        { label: '', color: '#6b7a72' },
 };
 
 const SCHEDULE = [
@@ -75,7 +75,7 @@ const SCHEDULE = [
         t: { pt: 'Santa Ordem Sacerdotal de Grande Sumo Sacerdote' } },
       { id: 's31-8', start: '17:35', end: '19:35', body: 'instalacao',
         t: { pt: 'Instalação dos 10 Soberanos Mestres' },
-        note: { pt: 'Ao todo, 9 graus e 1 cerimônia de instalação.\nNão estão incluídos nesta Jornada:\n- Antiga Ordem das Rolhas\n- Antigo Monitor de Jonas\n- Ordem de São Patrício\n- Ordem Real do Ramo Vermelho d\'Eri' } },
+        note: { pt: 'Ao todo, 9 graus e 1 cerimônia de instalação.\nNão estão incluídos nesta Jornada, pois são ordens e graus anexos conferidos somente na Anual:\n- Antiga Ordem das Rolhas\n- Antigo Monitor de Jonas\n- Ordem de São Patrício\n- Ordem Real do Ramo Vermelho d\'Eri' } },
     ],
   },
 ];
